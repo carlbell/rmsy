@@ -64,3 +64,6 @@ graphBad g n m = not ((containsNeighborhoodN g n) ||
 isLowerBound :: Int -> Int -> Int -> Bool
 isLowerBound d n m = foldr (||) (False) [(graphBad x n m)
     | x <- (createAllG d) ]
+
+r :: Int -> Int -> Int
+r n m = [x|x<-[1..], not (isLowerBound x n m)]!!0
